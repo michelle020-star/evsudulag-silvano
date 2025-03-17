@@ -5,19 +5,21 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration {
-    public function up()
+    public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('username')->unique();
             $table->string('password');
             $table->string('name');
-            $table->timestamps();
+            $table->string('gender');
+            $table->string('address');
         });
     }
 
-    public function down()
+    public function down(): void
     {
-        Schema::dropIfExists('users');
+        //
+        // Schema::drop('users')
     }
 };
