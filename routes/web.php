@@ -17,5 +17,9 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->get('/users', 'UsserController@getUsers');
+$router->get('/users', 'UserController@getUsers');
 $router->post('/login', 'UserController@login');
+
+$router->post('/create', 'ProductController@createProduct');
+$router->post('/buy/{id}', 'ProductController@buyProduct');
+$router->post('inactive/{id}', 'ProductController@inactiveProduct');
